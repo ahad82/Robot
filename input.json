@@ -1,0 +1,65 @@
+[
+  {
+    "run": [
+      {
+        "command": "place",
+        "args": {
+          "x": "0",
+          "y": "0",
+          "f": "north"
+        }
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "report"
+      }
+    ]
+  },
+  {
+    "run": [
+      {
+        "command": "place",
+        "args": {
+          "x": "0",
+          "y": "0",
+          "f": "north"
+        }
+      },
+      {
+        "command": "left"
+      },
+      {
+        "command": "report"
+      }
+    ]
+  },
+  {
+    "run": [
+      {
+        "command": "place",
+        "args": {
+          "x": "1",
+          "y": "2",
+          "f": "east"
+        }
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "left"
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "report"
+      }
+    ]
+  }
+]
