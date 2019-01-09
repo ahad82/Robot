@@ -1,6 +1,7 @@
 [
   {
-    "run": [
+    "setid": "1",
+    "set": [
       {
         "command": "place",
         "args": {
@@ -18,7 +19,8 @@
     ]
   },
   {
-    "run": [
+    "setid": "2",
+    "set": [
       {
         "command": "place",
         "args": {
@@ -36,7 +38,8 @@
     ]
   },
   {
-    "run": [
+    "setid": "3",
+    "set": [
       {
         "command": "place",
         "args": {
@@ -53,6 +56,43 @@
       },
       {
         "command": "left"
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "report"
+      }
+    ]
+  },
+  {
+    "setid": "4",
+    "set": [
+      {
+        "command": "place",
+        "args": {
+          "x": "0",
+          "y": "0",
+          "f": "north"
+        }
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "left"
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "move"
+      },
+      {
+        "command": "right"
+      },
+      {
+        "command": "move"
       },
       {
         "command": "move"

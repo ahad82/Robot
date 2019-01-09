@@ -1,6 +1,4 @@
 <?php
-set_include_path(".");
-define ("BASE_PATH", ".");
 require_once('AutoLoader.php');
 use Library\RobotToy;
 use Library\CommandInterpreter;
@@ -64,8 +62,27 @@ $commandList = json_decode($input, true);
 $commandInterpreter = new CommandInterpreter();
 foreach($commandList as $command) {
     $robot = new RobotToy();
-    $commandInterpreter->execute($robot, $command['run']);
-    $report = $commandInterpreter->getStatusReport();
-    print_r($report);
+    $commandInterpreter->execute($robot, $command['set'], $command['setid']);
 }
+$report = $commandInterpreter->getStatusReport();
+displayReport($report);
 
+/**
+ * Will display only failed commands due to dimension issues etc
+ * and final report
+ * @param $report
+ */
+
+function displayReport($report, $detailed_flag = false) {
+    foreach ($report as $command_set_id => $commands) {
+        echo "************** START *******************\n";
+        echo "COMMAND SET ID : $command_set_id \n";
+
+        foreach ($commands as $command => $result) {
+            echo "Result of command execution [[$command]] \n";
+            print_r($result);
+
+        }
+        echo "************** END *******************\n";
+    }
+}

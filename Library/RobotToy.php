@@ -1,15 +1,43 @@
 <?php
 namespace Library;
 
+/**
+ * Class RobotToy
+ * @package Library
+ */
 class RobotToy
 {
+    /**
+     *
+     */
     const X_AXIS_WHITELIST = [0, 1, 2, 3, 4, 5];
+    /**
+     *
+     */
     const Y_AXIS_WHITELIST = [0, 1, 2, 3, 4, 5];
+    /**
+     *
+     */
     const DIR_WHITELIST = ["north", "east", "west", "south"];
 
+    /**
+     * @var int
+     */
     protected $x_axis = 0;
+
+    /**
+     * @var int
+     */
     protected $y_axis = 0;
+
+    /**
+     * @var string
+     */
     protected $dir = "north";
+
+    /**
+     * @var string
+     */
     protected $errorMsg = "";
 
     /**
@@ -21,6 +49,16 @@ class RobotToy
         $this->place();
     }
 
+    /**
+     * Can be handy for unit tests
+     * @param $property
+     * @return mixed
+     */
+    public function get($property) {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
+    }
     /**
      * @param int $x
      * @param int $y
@@ -36,9 +74,15 @@ class RobotToy
         } else {
             return false;
         }
-
+        return true;
     }
 
+    /**
+     * @param $x
+     * @param $y
+     * @param $dir
+     * @return bool
+     */
     protected function validatePlaceDetails($x, $y, $dir)
     {
         $x = (int)$x;
