@@ -1,32 +1,10 @@
 <?php
+chdir(__DIR__);
 require_once('AutoLoader.php');
 use Library\RobotToy;
 use Library\CommandInterpreter;
-/**
-     N
-* W--|--E
- *   S
-Example Input and Output
-a)----------------
-PLACE 0,0,NORTH
-MOVE
-REPORT
-Output: 0,1,NORTH
-b)----------------
-PLACE 0,0,NORTH
-LEFT
-REPORT
-Output: 0,0,WEST
-c)----------------
-PLACE 1,2,EAST
-MOVE
-MOVE
-LEFT
-MOVE
-REPORT
-Output: 3,3,NORTH
- **/
-$input = file_get_contents('input.json');
+
+$input = file_get_contents('./input.json');
 $commandList = json_decode($input, true);
 $commandInterpreter = new CommandInterpreter();
 foreach($commandList as $command) {
@@ -37,9 +15,8 @@ $report = $commandInterpreter->getStatusReport();
 displayReport($report);
 
 /**
- * Will display only failed commands due to dimension issues etc
- * and final report
  * @param $report
+ * @param $detailed_flag
  */
 
 function displayReport($report, $detailed_flag = false) {

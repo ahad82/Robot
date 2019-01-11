@@ -5,7 +5,8 @@ namespace Library;
  * Class CommandInterpreter
  * @package Library
  */
-class CommandInterpreter {
+class CommandInterpreter
+{
 
     /**
      * @var array
@@ -16,7 +17,8 @@ class CommandInterpreter {
      * @param $command
      * @return bool
      */
-    protected function isValid($command) {
+    protected function isValid($command)
+    {
         return in_array($command, static::COMMANDS_WHITELIST);
     }
 
@@ -24,7 +26,8 @@ class CommandInterpreter {
      * @param RobotToy $robot
      * @param $commandList
      */
-    public function execute(RobotToy $robot, $commandList, $set_id) {
+    public function execute(RobotToy $robot, $commandList, $set_id)
+    {
         foreach ($commandList as $commandObj) {
             $command = $commandObj['command'];
 
@@ -56,11 +59,8 @@ class CommandInterpreter {
     /**
      * @param $str
      */
-    public function runLog($str) {
+    public function runLog($str)
+    {
         error_log($str);
     }
 }
-
-
-?>
-

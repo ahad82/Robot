@@ -9,7 +9,7 @@ The application should run using default test data provided in `practice\input.j
 Run the following command
 
 
-`php practice/index.php`
+`php Robot/index.php`
 
 ## Stack information
 Developed on PHP 5.6
