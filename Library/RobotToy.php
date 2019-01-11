@@ -3,6 +3,10 @@ namespace Library;
 
 /**
  * Class RobotToy
+ * Assumed compass
+ *    N
+ * W--|--E
+ *    S
  * @package Library
  */
 class RobotToy
