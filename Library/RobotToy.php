@@ -98,7 +98,7 @@ class RobotToy
             $this->errorMsg = 'Invalid y axis provided';
             $result = false;
         }
-        if (!in_array($dir, static::X_AXIS_WHITELIST)) {
+        if (!in_array($dir, static::DIR_WHITELIST)) {
             $this->errorMsg = 'Invalid x axis provided';
             $result = false;
         }
@@ -190,7 +190,7 @@ class RobotToy
      * @param $dir_list
      * @return mixed
      */
-    public function turn($dir, $dir_list)
+    protected function turn($dir, $dir_list)
     {
         $index = array_search($dir, $dir_list);
         if ($index !== false) {

@@ -78,11 +78,17 @@ function displayReport($report, $detailed_flag = false) {
         echo "************** START *******************\n";
         echo "COMMAND SET ID : $command_set_id \n";
 
-        foreach ($commands as $command => $result) {
-            echo "Result of command execution [[$command]] \n";
-            print_r($result);
+        if ($detailed_flag) { // Will include results of all commands, include success and failure reasons
+            foreach ($commands as $command => $result) {
+                echo "Result of command execution [[$command]] \n";
+                print_r($result);
 
+            }
+        } else { // report only
+            echo "Result of command execution [[report]] \n";
+            print_r($commands['report']);
         }
+
         echo "************** END *******************\n";
     }
 }
